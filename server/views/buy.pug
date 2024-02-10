@@ -22,20 +22,18 @@ html(lang="en")
             a(href="gettingStarted.html") Getting Started
 
     section.content-section
-      .grid-container
-        each name, index in namesArray
-          .grid-item
-            .card
-              .card-wrapper
-                h2= name
-                p Content for #{name}
-                button.buy-button Buy
-
-    section.mission-section
-      .mission-wrapper
-        .mission-textbox
-          h2= namesArray
-          p= zip_code
+      .center-wrapper
+        .grid-container
+          each name, index in namesArray
+            .grid-item
+              .card
+                .card-wrapper
+                  h2= name
+                  p Content for #{name}
+                  p Product: #{productName[index]}
+                  p Price: #{price[index]}
+                  p Zip Code: #{zip_code[index]}
+                  button.buy-button Buy
 
     footer
       .footer__copyright
@@ -44,3 +42,4 @@ html(lang="en")
         img.footer-logo-img(src="../assets/logo.png", alt="logo", class="footer-logo-img")
     script(src="search.js")
     script(src="imageslider.js")
+

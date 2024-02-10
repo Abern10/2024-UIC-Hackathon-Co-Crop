@@ -55,7 +55,7 @@ app.post('/search', (req, res) => {
             namesArray.push(row.Name);
             productName.push(row.Product_Name);
             price.push(row.Price);
-            quanitity.push(row.Quanitity);
+//            quantity.push(row.Quanitity);
             zip_code.push(row.Zip_Code);
             // searchResults.push({
             //     name: row.Name,
@@ -72,7 +72,7 @@ app.post('/search', (req, res) => {
 
 app.get('/buy', (req, res) => {
     
-    res.render("buy", {namesArray, productName, price, quanitity, zip_code})
+    res.render("buy", {namesArray, productName, price, zip_code})
 
 });
 

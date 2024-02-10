@@ -1,22 +1,38 @@
 const sqlite3 = require('sqlite3').verbose();
 const path = require('path');
+const fs = require('fs');
 
 // Set the path to the database file inside the server folder
 const dbPath = path.join(__dirname, 'cocrop.db');
 
-// Create a new SQLite database connection
+if (fs.existsSync(dbPath)){
+    fs.unlinkSync(dbPath);
+    console.log('db deleted');
+}
+
 const db = new sqlite3.Database(dbPath, (err) => {
     if (err) {
         console.error('Error opening database:', err.message);
         return;
     }
-    console.log('Connected to the database.');
+    console.log('added to the database.');
 
-    // Create tables and populate with data
     createTablesAndPopulateData();
+    submitForm();
 });
 
-// Function to create tables and populate with data
+function submitForm() {
+    // Get values from text fields
+    let accountName = document.getElementById('account-name').value;
+    let price = document.getElementById('price').value;
+    let weight = document.getElementById('weight').value;
+    let zipCode = document.getElementById('zip-code').value;
+
+    // Call addProduct function with extracted values
+    addProduct(accountName, price);
+    // You can use the other extracted values (weight, zipCode) as needed.
+}
+
 function createTablesAndPopulateData() {
     // Define SQL statements to create tables
     const createTablesSQL = `
@@ -136,7 +152,39 @@ function createTablesAndPopulateData() {
     });
 }
 
-// Close the database connection
+function addProduct(name, price) {
+    // Generate a random product ID
+    let product_ID = getRandom5DigitNumber();
+
+    // Assuming you have a User_ID and Zip_Code
+    let user_ID = "DeerLover"; // Replace with the actual User_ID
+    let zip_Code = "60602"; // Replace with the actual Zip_Code
+
+    const add = `
+        INSERT INTO Products (Product_ID, Product_Name, Price, Quantity, User_ID, Zip_Code)
+        VALUES 
+            (${product_ID}, '${name}', ${price}, 1, '${user_ID}', '${zip_Code}')
+    `;
+
+
+    db.exec(add, (err) => {
+        if (err) {
+            console.error('Error creating tables:', err.message);
+            return;
+        }
+        console.log('Tables created successfully.');
+    });
+    // Execute the SQL query here (e.g., using a database connection or an API)
+}
+
+
+function getRandom5DigitNumber() {
+    const min = 10000; // Minimum 5-digit number
+    const max = 99999; // Maximum 5-digit number
+
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 db.close((err) => {
     if (err) {
         console.error('Error closing database:', err.message);

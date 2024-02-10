@@ -4,39 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Co-Crop</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="sellingStyles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
 </head>
 <body>
 
-    <div class="navbar">
-        <div class="navbar-wrapper">
-            <!-- Logo with link to home page -->
-            <a href="index.html"><img src="../assets/logo.png" alt="Logo" class="navbar-logo"></a>
-            <!-- Search bar -->
-            <div class="searchInput">
+<div class="navbar">
+    <div class="navbar-wrapper">
+        <!-- Logo with link to home page -->
+        <a href="index.html"><img src="../assets/logo.png" alt="Logo" class="navbar-logo"></a>
+        <!-- Search bar -->
+        <div class="searchInput">
+            <form action="/search" method="POST">
                 <input type="text" placeholder="Search for produce...">
-                <div class="resultBox"></div>
-                <div class="icon">&#128269;</div>
-            </div>
-            <!-- Navigation links -->
-            <ul class="navbar-links">
-                <li><a href="sell.html">Sell Produce</a></li>
-                <li><a href="gettingStarted.html">Getting Started</a></li> <!-- Added link to gettingStarted.html -->
-            </ul>
+            </form>
+            <div class="resultBox"></div>
+            <div class="icon">&#128269;</div> 
         </div>
+        <!-- Navigation links -->
+        <ul class="navbar-links">
+            <li><a href="sell.html">Sell Produce</a></li>
+            <li><a href="gettingStarted.html">Getting Started</a></li> <!-- Added link to gettingStarted.html -->
+        </ul>
     </div>
+</div>
 
-<!-- Your page content goes here -->
-
-<footer>
-    <div class="footer__copyright">
-        <a>&copy; Co-Crop. All Rights Reserved</a>
+<div class="container">
+    <div class="box">
+      <h2>Planting</h2>
+      <p>Starting your own garden is simple and rewarding! First, pick a good spot with lots of sunshine and water. Then, dig up your soil with a fork or tiller to loosen the soil. We recommend adding manuer or other nutrients during this step. When it comes to chosing what to plant, it's important to consider your sourounding climate. Place the seeds in your dug up soil and water it so that the soil is dam. Continue to water your plants daily and look out for bugs and sickness. Finally, when you're ready to harvest, enjoy your produce and sell your extras here!</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/NlS_dTDsHHQ?si=kKY5LgLvGRLgIh6U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
-    <a href="index.html">
-        <img src="../assets/logo.png" alt="logo" class="footer-logo-img">
-    </a>
-</footer>
+    <div class="box white-background"> <!-- Add white-background class to the second box -->
+      <h2>Upkeep</h2>
+      <p>Taking care of your plants and veggies is super important for making sure they grow big and strong. Start by giving them enough sun and water. Don't forget to water them regularly, but don't drown them! Putting some mulch around them can help keep the dirt nice and moist and keep the weeds away. Also, feed them every now and then with some good compost or plant food to give them the nutrients they need. Keep an eye out for bugs and sickness, 'cause catching it early can save your plants. Try using natural stuff or organic bug spray to keep those pests away. Lastly, trim your plants when they need it to help them grow better. Following these steps will help your plants and veggies grow awesome!</p>
+      <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/sKu8Zg7Hplc?si=MNYeLtTkkkgZZMot" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/YlkrrMSlfxM?si=yNEy4DR3bEn70BWK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    <div class="box">
+      <h2>Selling</h2>
+      <p>Are you ready to sell your garden goodies on our site? It's easy! First, make sure you has an account here. Then, go to the 'Sell Your Produce' section. You'll find simple steps for listing your items. Describe your produce good and add nice photos. Include details like what type it is, how big, and how fresh. When setting prices, think about how much work you put into growing them. Keep your listings updated if anything changes. Talk to people who ask questions quick and give them helpful advices. You might want to offer discounts to get more customers. With your love for growing food and our help, you'll do great!</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Lp0iNcQ2Kks?si=yc5huObvFRmw39Uk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+  </div>
 
+    <!-- Footer -->
+    <footer>
+        <div class="footer__copyright">
+            <a>&copy; Co-Crop. All Rights Reserved</a>
+        </div>
+        <a href="index.html">
+            <img src="../assets/logo.png" alt="logo" class="footer-logo-img">
+        </a>
+    </footer>
+
+<script src="search.js"></script>
 </body>
 </html>
