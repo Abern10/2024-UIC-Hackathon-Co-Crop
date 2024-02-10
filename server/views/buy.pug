@@ -1,0 +1,67 @@
+html
+  head
+    title Hello World
+  body
+    doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Co-Crop
+    link(rel="stylesheet", href="styles.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap")
+
+  body
+    .navbar
+      .navbar-wrapper
+        a(href="index.html")
+          img.navbar-logo(src="../assets/logo.png", alt="Logo", class="navbar-logo")
+        .searchInput
+          form(action="/search", method="POST")
+            input(type="text", placeholder="Search for produce...")
+          .resultBox
+          .icon &#128269;
+        ul.navbar-links
+          li
+            a(href="sell.html") Sell Produce
+          li
+            a(href="gettingStarted.html") Getting Started
+
+    section.content-section
+    //-   .column
+    //-     .card.garden-card
+    //-       .slideshow-container
+    //-         .mySlides.fade
+    //-           img(src="../assets/garden.jpeg", style="width:100%")
+    //-         .mySlides.fade
+    //-           img(src="../assets/garden2.jpeg", style="width:100%")
+    //-         .mySlides.fade
+    //-           img(src="../assets/garden3.jpeg", style="width:100%")
+    //-   .column
+    .wrapper-buy
+    .grid
+        .card.result 
+        .
+    .grid
+    
+        .card
+          .card-content
+            h2 Square Card
+            p This is the content of the square card.
+
+    section.mission-section
+      .mission-wrapper
+        .mission-textbox
+          h2= namesArray
+          p= zip_code
+
+    footer
+      .footer__copyright
+        a &copy; Co-Crop. All Rights Reserved
+      a(href="index.html")
+        img.footer-logo-img(src="../assets/logo.png", alt="logo", class="footer-logo-img")
+    script(src="search.js")
+    script(src="imageslider.js")
+
+
+        

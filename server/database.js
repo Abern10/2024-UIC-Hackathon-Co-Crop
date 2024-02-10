@@ -12,13 +12,10 @@ const db = new sqlite3.Database(dbPath, (err) => {
     }
     console.log('Connected to the database.');
 
-    // Create tables and populate with data
     createTablesAndPopulateData();
 });
 
-// Function to create tables and populate with data
 function createTablesAndPopulateData() {
-    // Define SQL statements to create tables
     const createTablesSQL = `
         CREATE TABLE IF NOT EXISTS Users (
             Name TEXT NOT NULL,
@@ -37,7 +34,6 @@ function createTablesAndPopulateData() {
         );
     `;
 
-    // Define SQL statement to insert data into Users table
     const insertUsersSQL = `
         INSERT INTO Users (Name, User_ID, Zip_Code)
         VALUES 
@@ -52,7 +48,6 @@ function createTablesAndPopulateData() {
             ('Daniel Miller', 'DanM', 13579);
     `;
 
-    // Define SQL statement to insert data into Products table
     const insertProductsSQL = `
         INSERT INTO Products (Product_ID, Product_Name, Price, Quantity, User_ID, Zip_Code)
         VALUES 
@@ -71,7 +66,6 @@ function createTablesAndPopulateData() {
             (3008, 'Cucumber', 0.47, 3, 'SophiaL', 78901);
     `;
 
-    // Execute SQL statements to create tables and insert data
     db.exec(createTablesSQL, (err) => {
         if (err) {
             console.error('Error creating tables:', err.message);
@@ -97,7 +91,6 @@ function createTablesAndPopulateData() {
     });
 }
 
-// Close the database connection
 db.close((err) => {
     if (err) {
         console.error('Error closing database:', err.message);

@@ -15,9 +15,11 @@
             <a href="index.html"><img src="../assets/logo.png" alt="Logo" class="navbar-logo"></a>
             <!-- Search bar -->
             <div class="searchInput">
-                <input type="text" placeholder="Search for produce...">
+                <form action="/search" method="POST">
+                    <input type="text" placeholder="Search for produce...">
+                </form>
                 <div class="resultBox"></div>
-                <div class="icon">&#128269;</div>
+                <div class="icon">&#128269;</div> 
             </div>
             <!-- Navigation links -->
             <ul class="navbar-links">
