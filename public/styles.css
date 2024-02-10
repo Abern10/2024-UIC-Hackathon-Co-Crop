@@ -252,3 +252,27 @@ footer a {
     width: 100%;
     text-align: center;
 }
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 30px;
+    padding: 30px;
+}
+
+.grid-item {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.card {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-wrapper {
+    padding: 20px;
+}
