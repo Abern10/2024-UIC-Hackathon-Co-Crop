@@ -1,14 +1,27 @@
+console.log('Script loaded');
+
 document.addEventListener('DOMContentLoaded', function () {
     const input = document.querySelector('.searchInput input');
     
     input.addEventListener('keypress', function (e) {
+        console.log('Key pressed: ', e.key);
         if (e.key === 'Enter') {
+            console.log('eter pressed');
             const searchTerm = input.value;
             console.log('Search term:', searchTerm);
             // Make AJAX request to the server
             fetch(`/search?term=${encodeURIComponent(searchTerm)}`)
-                .then(response => response.json())
-                .then(data => displaySearchResults(data))
+                .then(response => {
+                    if(!response.ok) {
+                        throw new Error('Neowrk response failed');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                    // Redirect to buy.html with search term and results as query parameters
+                    window.location.href = `/buy.html?search=${encodeURIComponent(searchTerm)}&results=${encodeURIComponent(JSON.stringify(data))}`;
+                })
                 .catch(error => console.error('Error fetching search results:', error));
         }
     });
