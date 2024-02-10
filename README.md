@@ -17,6 +17,7 @@ Technologies Used
 ● Sqlite3
 ● Pug
 How to Use
+******Download all the files, then run the database.js files, then cd into server directory, run the server.js file, then in your browser go to local port 3000*******
 Browsing Listings: Users can navigate the website to browse crop listings in their
 area by using the search functionality or browsing through available categories.
 Contacting Growers: Upon finding a listing of interest, users can contact the
