@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Co-Crop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="navbar-wrapper">
+        <!-- Logo with link to home page -->
+        <a href="index.html"><img src="../assets/logo.png" alt="Logo" class="navbar-logo"></a>
+        <!-- Navigation links -->
+        <ul class="navbar-links">
+            <form method="get" id="category-search-form" class="navbar-search">
+                <div class="search-bar-div">
+                    <div class="searchInput">
+                        <input type="text" value = "" placeholder="Search for Produce..." id = "searchBar">
+                        <div class="resultBox"></div>
+                        <div class="icon"><i class="fas fa-search"></i></div>
+                    </div>
+                </div>
+            </form>
+            <li><a href="sell.html">Sell Produce</a></li>
+            <li><a href="gettingStarted.html">Getting Started</a></li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="main-content">
+    <div class="left-section">
+        <h2 class="sub-header">Product Details</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="account-name" class="sell-text">Account Name:</label>
+                <input type="text" id="account-name" name="account-name" class="text-field">
+            </div>
+            <div class="form-group">
+                <label for="price" class="sell-text">Price:</label>
+                <input type="text" id="price" name="price" class="text-field">
+            </div>
+            <div class="form-group">
+                <label for="weight" class="sell-text">Weight: (in oz.)</label>
+                <input type="text" id="weight" name="weight" class="text-field">
+            </div>
+            <div class="form-group">
+                <label for="zip-code" class="sell-text">ZIP Code:</label>
+                <input type="text" id="zip-code" name="zip-code" class="text-field">
+            </div>
+            <button type="submit" class="button-primary">Submit</button>
+        </form>
+    </div>
+    <div class="right-section">
+        <h2 class="sub-header">Select an Image</h2>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <label class="input-file">
+                Choose File
+                <input type="file" name="image" id="image-upload" accept=".jpg, .png">
+            </label>
+            <button type="submit" class="button-primary">Upload Image</button>
+        </form>
+        <div class="searchInput">
+            <h2 class="sub-header">Category Search</h2>
+            <form action="course.html" method="get" id="category-search-form">
+                <div class="search-bar-div">
+                    <div class="searchInput">
+                            <form action="course.html" method="get" id="search-form">
+                                <input type="text" placeholder="Search for Produce...">
+                                    <div class="resultBox"></div>
+                                <div class="icon"><i class="fas fa-search"></i></div>
+                            </form>
+                      </div>
+                </div>
+                <script src="search.js"></script>
+            </form>
+        </div>        
+    </div>
+</div>
+
+<footer>
+    <div class="footer__copyright">
+        <a>&copy; Co-Crop. All Rights Reserved</a>
+    </div>
+    <a href="index.html">
+        <img src="../assets/logo.png" alt="logo" class="footer-logo-img">
+    </a>
+</footer>
+
+</body>
+</html>

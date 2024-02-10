@@ -1,0 +1,254 @@
+/* Style for the navigation bar */
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+.navbar {
+    background-color: #225726;
+    overflow: hidden;
+    width: 100%; /* Set the navbar width to 100% */
+    height: 150px; /* Set the desired height */
+}
+/* Style for the wrapper */
+.navbar-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar-logo {
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    margin-top: -20px; /* Increase margin to raise the logo */
+    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.navbar-logo:hover {
+    transform: scale(1.1); /* Scale up the logo slightly on hover */
+}
+
+.navbar-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-left: 20px; /* Add margin to move links more to the left */
+    margin-top: -20px; /* Increase margin to raise the links */
+}
+
+.navbar-links li {
+    margin-right: 20px;
+}
+
+.navbar-links li a {
+    position: relative; /* Make the link container relative */
+    color: white; /* Text color set to white */
+    text-decoration: none;
+    font-size: 32px; /* Adjust font size as needed */
+    padding: 10px 15px; /* Add padding for spacing */
+    font-family: 'Open Sans', sans-serif; /* Change font family to Open Sans */
+}
+
+/* Animation effect */
+.navbar-links li a::before,
+.navbar-links li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px; /* Adjust the thickness of the underline */
+    background-color: white;
+    transition: transform 0.3s ease; /* Add a transition for smooth animation */
+    transform-origin: left;
+    transform: scaleX(0); /* Initially set the scale to 0 to hide the underline */
+}
+
+.navbar-links li a::before {
+    bottom: 0;
+    transform-origin: right;
+}
+
+.navbar-links li a:hover::before,
+.navbar-links li a:hover::after {
+    transform: scaleX(1); /* Expand the underline on hover */
+}
+
+/* Footer */
+footer {
+    background: #225726;
+    padding: 3rem 0;
+    text-align: center;
+    font-size: .9rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1000; /* Ensure the footer is above other content */
+}
+    
+footer a {
+    color: white; /* Text color set to white */
+    text-decoration: none;
+    font-size: 18px; /* Adjust font size to match navbar links */
+    font-family: 'Open Sans', sans-serif; /* Change font family to Open Sans */
+}
+
+.footer-logo-img {
+    width: 100px;
+    height: 100px;
+    font-weight: 500;
+    margin-top: -20px; /* Adjust as needed to raise the logo image */
+    display: inline-block;
+    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.footer-logo-img:hover {
+    transform: scale(1.1); /* Scale up the logo slightly on hover */
+}
+
+.content-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 30px; /* Add a gap between columns */
+}
+
+.column {
+    flex: 1;
+}
+
+.card {
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3); /* Adjust box shadow */
+    margin-bottom: 20px; /* Add some space between cards */
+    height: 300px; /* Set the height of the cards */
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.garden-card {
+    width: 100%; /* Set the width of the card */
+    height: 300px; /* Set the height of the card */
+    overflow: hidden; /* Clip any content that overflows */
+    border-radius: 20px;
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3); /* Adjust box shadow */
+    margin-bottom: 20px; /* Add some space between cards */
+    position: relative; /* Needed for absolute positioning of slideshow controls */
+}
+
+.garden-card img {
+    width: 100%; /* Ensure the image fills the entire space of the card */
+    height: 100%; /* Ensure the image fills the entire space of the card */
+    object-fit: cover; /* Cover the entire card with the image */
+}
+
+/* Mission statement section */
+.mission-section {
+    text-align: center; /* Center the content horizontally */
+    margin-top: 50px; /* Add margin to create space between the mission section and the footer */
+}
+
+.mission-wrapper {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    height: 100%; /* Ensure the wrapper takes up the full height of the section */
+}
+
+.mission-textbox {
+    max-width: 800px; /* Set the maximum width of the text box */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+/* Search bar */
+.searchInput {
+    position: relative;
+    display: inline-block;
+    width: 500px;
+}
+
+.searchInput input {
+    height: 55px;
+    width: calc(100% - 60px); /* Adjust width to accommodate the icon */
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    padding: 0 20px; /* Adjust padding */
+    font-size: 18px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.searchInput .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 55px;
+    width: 60px; /* Adjust width to match the padding */
+    text-align: center;
+    line-height: 55px;
+    font-size: 20px;
+    color: #644bff;
+    cursor: pointer;
+    pointer-events: none; /* Prevents the icon from capturing mouse events */
+    padding-right: 1rem;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+    max-width: 100%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
